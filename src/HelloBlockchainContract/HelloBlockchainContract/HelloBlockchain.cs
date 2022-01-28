@@ -48,7 +48,7 @@ public class HelloBlockchain : SmartContract
 
 	public void SendRequest(string requestMessage)
 	{
-		Assert(Message.Sender == Requestor);
+		Assert(Message.Sender == Requestor, "Sender is not requestor");
 
 		RequestMessage = requestMessage;
 		State = (uint)StateType.Request;
